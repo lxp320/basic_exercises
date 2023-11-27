@@ -67,7 +67,7 @@ groups = [
     ['Оля', 'Петя', 'Гриша'],
 ]
 # Функция для вывода количества учеников в группах
-def groups_one(groups_list: str) -> None:
+def groups_one(groups_list: list) -> None:
     print('Задание 4:')
     # Счетчик групп
     i = 1
@@ -91,7 +91,7 @@ groups_one(groups)
 #    ['Вася', 'Маша', 'Саша', 'Женя'],
 #]
 # Функция для вывода количества учеников в группах
-def groups_two(groups_list: str) -> None:
+def groups_two(groups_list: list) -> None:
     print('Задание 5:')
     # Счетчик групп
     i = 1
