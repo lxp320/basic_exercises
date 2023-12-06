@@ -65,6 +65,25 @@ def generate_chat_history():
         })
     return messages
 
+def user_message_counter(chat_history: list) -> dict:
+    user_messages = {}
+    for message in chat_history:
+        user_id = message.get("sent_by")
+        if user_messages.get(user_id) != None:
+            user_messages[user_id] += 1
+        else:
+            user_messages[user_id] = 1
+    return user_messages
+
+def user_max_message_written(user_message_data: list) -> int:
+    user_messages = user_message_counter(user_message_data)
+    user_max_message_id = max(user_messages, key = user_messages.get)
+    print(f'Больше всех сообщений ({user_messages.get(user_max_message_id)}) написано пользователем с id: {user_max_message_id}')
+    return user_max_message_id
 
 if __name__ == "__main__":
-    print(generate_chat_history())
+    chat_history = generate_chat_history()
+    print(chat_history)
+    user_max_message_written(chat_history)
+
+
